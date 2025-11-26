@@ -1,0 +1,209 @@
+# ============================================
+# DEPENDENCIES
+# ============================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ============================================
+# ENVIRONMENT VARIABLES
+# ============================================
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+.env.*.local
+.env.backup
+
+# ============================================
+# LOGS
+# ============================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+combined.log
+error.log
+access.log
+
+# ============================================
+# OPERATING SYSTEM FILES
+# ============================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================
+# IDE & EDITORS
+# ============================================
+# Visual Studio Code
+.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# JetBrains (WebStorm, IntelliJ, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ============================================
+# BUILD & DISTRIBUTION
+# ============================================
+dist/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+coverage/
+*.tsbuildinfo
+
+# ============================================
+# UPLOADS & USER GENERATED CONTENT
+# ============================================
+uploads/
+temp/
+tmp/
+*.tmp
+public/uploads/
+
+# ============================================
+# DATABASE
+# ============================================
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+database.json
+db_backup/
+*.dump
+
+# ============================================
+# TESTING
+# ============================================
+coverage/
+.nyc_output/
+*.lcov
+.jest/
+test-results/
+__tests__/coverage/
+
+# ============================================
+# CERTIFICATES & KEYS
+# ============================================
+*.pem
+*.key
+*.cert
+*.crt
+*.csr
+*.p12
+*.pfx
+ssl/
+certs/
+private/
+
+# ============================================
+# BACKUP FILES
+# ============================================
+*.bak
+*.backup
+*.old
+*_backup
+*_old
+backup/
+
+# ============================================
+# SENSITIVE DATA
+# ============================================
+secrets/
+credentials/
+*.secret
+*.private
+config/local.js
+config/production.js
+
+# ============================================
+# DOCUMENTATION (if you want to keep it private)
+# ============================================
+# docs/private/
+# internal-docs/
+
+# ============================================
+# MISCELLANEOUS
+# ============================================
+*.pid
+*.seed
+*.pid.lock
+.cache
+.eslintcache
+.stylelintcache
+.sass-cache/
+.grunt/
+.lock-wscript
+lib-cov
+pids
+*.gz
+.node_repl_history
+.npm
+.yarn-integrity
+.pnp.*
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# ============================================
+# OPTIONAL: COMMENT OUT IF YOU WANT TO TRACK
+# ============================================
+# .vscode/settings.json
+# package-lock.json
