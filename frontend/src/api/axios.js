@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  baseURL: import.meta.env.VITE_API_URL || '/api',
   headers: {
     'Content-Type': 'application/json'
   }
@@ -25,13 +25,25 @@ axiosInstance.interceptors.response.use(
   async (error) => {
     const originalRequest = error.config;
 
+    // Avoid infinite loop on refresh endpoint
+    if (originalRequest.url?.includes('/auth/refresh')) {
+      localStorage.clear();
+      window.location.href = '/login';
+      return Promise.reject(error);
+    }
+
     if (error.response?.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
 
       try {
         const refreshToken = localStorage.getItem('refreshToken');
+        
+        if (!refreshToken) {
+          throw new Error('No refresh token available');
+        }
+
         const response = await axios.post(
-          `${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/auth/refresh`,
+          `${import.meta.env.VITE_API_URL || '/api'}/auth/refresh`,
           { refreshToken }
         );
 
