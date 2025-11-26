@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  base: '/payrollsystem/', // add this line
   server: {
     port: 3000,
     proxy: {
