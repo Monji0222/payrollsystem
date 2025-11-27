@@ -21,7 +21,7 @@ const app = express();
 // Security middleware
 app.use(helmet());
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+  origin: process.env.CORS_ORIGIN || 'https://payrollsystem-l3s8.vercel.app',
   credentials: true
 }));
 
