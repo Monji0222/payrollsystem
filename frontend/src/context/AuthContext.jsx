@@ -31,25 +31,33 @@ export const AuthProvider = ({ children }) => {
   };
 
   const login = async (email, password) => {
-    try {
-      const response = await apiLogin(email, password);
-      const { user, accessToken, refreshToken } = response.data;
-      
-      // Store tokens and user data
-      localStorage.setItem('accessToken', accessToken);
-      localStorage.setItem('refreshToken', refreshToken);
-      localStorage.setItem('user', JSON.stringify(user));
-      
-      setUser(user);
-      return { success: true };
-    } catch (error) {
-      console.error('Login error:', error);
-      return { 
-        success: false, 
-        message: error.response?.data?.message || 'Login failed. Please check your credentials.' 
-      };
-    }
-  };
+  try {
+    const response = await apiLogin(email, password);
+    
+    // 🔍 ADD THESE LOGS:
+    console.log('=== LOGIN DEBUG ===');
+    console.log('Full response:', response);
+    console.log('response.data:', response.data);
+    console.log('Type of response.data:', typeof response.data);
+    console.log('===================');
+    
+    // Try to access the data
+    const { user, accessToken, refreshToken } = response.data;
+    
+    localStorage.setItem('accessToken', accessToken);
+    localStorage.setItem('refreshToken', refreshToken);
+    localStorage.setItem('user', JSON.stringify(user));
+    
+    setUser(user);
+    return { success: true };
+  } catch (error) {
+    console.error('Login error:', error);
+    return { 
+      success: false, 
+      message: error.response?.data?.message || 'Login failed. Please check your credentials.' 
+    };
+  }
+};
 
   const logout = async () => {
     try {
@@ -83,3 +91,4 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
